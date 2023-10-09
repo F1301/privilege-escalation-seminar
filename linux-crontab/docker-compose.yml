@@ -1,0 +1,7 @@
+version: "3.6"
+services:
+  linux-crontab:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8080:80"
