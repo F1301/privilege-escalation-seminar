@@ -19,5 +19,14 @@ RUN chmod +t -R /var/www/html/
 RUN echo "F1301{flag_here}" > /root/f1301-secret.txt
 RUN chown root:root /root/f1301-secret.txt
 
-# user www-data as default
-USER www-data
+# install crontab and nano
+RUN apt-get update && apt-get install -y cron nano
+
+# Setup cron job
+COPY my-crontab /etc/cron.d/my-crontab
+RUN chmod 0644 /etc/cron.d/my-crontab
+RUN crontab /etc/cron.d/my-crontab
+RUN touch /var/log/cron.log
+
+# CMD change to include cron
+CMD cron && apache2-foreground
