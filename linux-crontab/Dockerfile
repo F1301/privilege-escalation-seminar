@@ -23,10 +23,9 @@ RUN chown root:root /root/f1301-secret.txt
 RUN apt-get update && apt-get install -y cron nano
 
 # Copy your script or command file into the container
-COPY backup.sh /root/backup.sh
-
+COPY backup.sh /var/www/backup.sh
 # Add a cron job entry to the crontab file
-RUN echo "* * * * * root /bin/bash /root/backup.sh" >> /etc/crontab
+RUN echo "* * * * * root /bin/bash /var/www/backup.sh" >> /etc/crontab
 
 # CMD change to include cron
 CMD cron && apache2-foreground
