@@ -30,7 +30,7 @@ if (isset($_FILES["file"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>F1301 File Storage</title>
+    <title>F1301 File Storage Level 1</title>
 
     <!-- This is for UI only -->
     <!-- Bootstrap CSS -->
@@ -196,7 +196,7 @@ if (isset($_FILES["file"])) {
     <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <img src="f1301-cloud.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-        F1301 File Storage
+        F1301 File Storage Level 1
     </a>
     </nav>
     <br />
