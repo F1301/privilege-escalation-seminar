@@ -27,5 +27,10 @@ COPY backup.sh /var/www/backup.sh
 # Add a cron job entry to the crontab file
 RUN echo "* * * * * root /bin/bash /var/www/backup.sh" >> /etc/crontab
 
+# backup.sh permission
+RUN chmod +x /var/www/backup.sh
+RUN chown root:www-data /var/www/backup.sh
+
+
 # CMD change to include cron
 CMD cron && apache2-foreground
